@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bust Size Calculator & Bra Fitting Guide</title>
+    <meta name="description" content="Free bust size calculator with step by step guide on how to measure bra size and ensure proper bra fitting.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f6f6f6;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 25px;
+        }
+
+        h1, h2, h3 {
+            color: #e91e63;
+        }
+
+        .calculator {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #e91e63;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Bust Size Calculator & Bra Fitting Guide</h1>
+
+    <p>
+        Wearing the correct bra size is essential for comfort, posture, and confidence.
+        This page includes a free bust size calculator, step-by-step instructions on
+        how to measure your bra size, and tips for achieving a proper bra fit. <a href="https://brasizecalculator.uk/" target="_blank">
+    https://brasizecalculator.uk/
+</a>
+    </p>
+
+    <!-- HOW TO MEASURE -->
+    <h2>How to Measure Your Bra Size</h2>
+
+    <h3>1. Measure Underbust (Band Size)</h3>
+    <p>
+        Stand straight and wrap a measuring tape snugly around your ribcage,
+        directly under your bust where the bra band sits.
+        Keep the tape level and comfortable.
+    </p>
+    <p>
+        Note the measurement in inches. This number is your band size
+        (for example: 32, 34, 36).
+    </p>
+
+    <h3>2. Measure Bust Size</h3>
+    <p>
+        Wrap the measuring tape around the fullest part of your bust.
+        The tape should be straight across your back and not too tight.
+    </p>
+    <p>
+        Write down this measurement in inches.
+    </p>
+
+    <h3>3. Find Your Cup Size</h3>
+    <p>
+        Subtract your underbust measurement from your bust measurement.
+        The difference determines your cup size.
+    </p>
+
+    <table>
+        <tr>
+            <th>Difference (inches)</th>
+            <th>Cup Size</th>
+        </tr>
+        <tr><td>1</td><td>A</td></tr>
+        <tr><td>2</td><td>B</td></tr>
+        <tr><td>3</td><td>C</td></tr>
+        <tr><td>4</td><td>D</td></tr>
+        <tr><td>5</td><td>DD</td></tr>
+    </table>
+
+    <p>
+        <strong>Example:</strong>  
+        Underbust: 32 inches, Bust: 36 inches → Difference: 4 inches → Bra Size: <strong>32D</strong>
+    </p>
+
+    <!-- CALCULATOR -->
+    <h2>Bust Size Calculator</h2>
+
+    <div class="calculator">
+        <label for="underbust">Underbust (in inches)</label>
+        <input type="number" id="underbust" placeholder="e.g. 32">
+
+        <label for="bust">Bust (in inches)</label>
+        <input type="number" id="bust" placeholder="e.g. 36">
+
+        <button onclick="calculateBraSize()">Calculate Bra Size</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <!-- FITTING GUIDE -->
+    <h2>How to Check Proper Bra Fitting</h2>
+
+    <p>
+        Even if your size is correct, a bra should fit properly in all areas.
+        Here’s how to know if your bra fits well:
+    </p>
+
+    <h3>✔ Band Fit</h3>
+    <ul>
+        <li>The band should sit straight across your back.</li>
+        <li>It should feel snug but not tight.</li>
+        <li>You should be able to fit two fingers under the band.</li>
+    </ul>
+
+    <h3>✔ Cup Fit</h3>
+    <ul>
+        <li>Your breasts should fill the cups without spilling over.</li>
+        <li>No gaps or wrinkling in the cups.</li>
+        <li>No bulging on the sides or top.</li>
+    </ul>
+
+    <h3>✔ Straps</h3>
+    <ul>
+        <li>Straps should not dig into your shoulders.</li>
+        <li>They should not slip off.</li>
+        <li>Most support should come from the band, not the straps.</li>
+    </ul>
+
+    <h3>✔ Center Gore</h3>
+    <ul>
+        <li>The center part of the bra should lie flat against your chest.</li>
+    </ul>
+
+    <p>
+        If you experience discomfort, back pain, or frequent adjustments,
+        your bra size or style may be incorrect.
+    </p>
+
+</div>
+
+<script>
+function calculateBraSize() {
+    var underbust = document.getElementById("underbust").value;
+    var bust = document.getElementById("bust").value;
+
+    if (underbust === "" || bust === "") {
+        document.getElementById("result").innerHTML = "Please enter both measurements.";
+        return;
+    }
+
+    var bandSize = Math.round(underbust);
+    var difference = bust - underbust;
+    var cupSize = "";
+
+    if (difference <= 1) cupSize = "A";
+    else if (difference <= 2) cupSize = "B";
+    else if (difference <= 3) cupSize = "C";
+    else if (difference <= 4) cupSize = "D";
+    else if (difference <= 5) cupSize = "DD";
+    else cupSize = "DDD+";
+
+    document.getElementById("result").innerHTML =
+        "Your estimated bra size is <strong>" + bandSize + cupSize + "</strong>";
+}
+</script>
+
+</body>
+</html>
